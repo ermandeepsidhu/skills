@@ -42,10 +42,30 @@ x = MARGIN + c * (NODE_W + H_GAP)   ->  40, 280, 520, 760, ...
 y = MARGIN + t * (NODE_H + V_GAP)   ->  40, 240, 440, 640, ...
 ```
 
-**Boundaries:** compute the bounding box of the children that belong to the boundary, then
-expand by `BOUNDARY_PAD = 24` on each side. Emit the boundary cell *before* its children so
-it renders behind them. Children use coordinates **relative to the boundary origin** (see
-`mxgraph-primer.md`).
+**Boundaries.** A boundary wraps a set of child elements. Compute it in three steps:
+
+1. **Bounding box** of the children, in page coordinates. With children spanning columns
+   `c` and tiers `t`, that is `min_x … max_x+NODE_W` by `min_y … max_y+NODE_H`.
+2. **Pad** by `BOUNDARY_PAD = 24` on every side. So the boundary's page origin is
+   `(min_x - 24, min_y - 24)`, its width is `(max_x + NODE_W) - min_x + 48`, and its height
+   is `(max_y + NODE_H) - min_y + 48`. (The boundary intentionally extends ~24px left of and
+   above the grid margin — that is expected, not an error.)
+3. **Re-express each child relative to the boundary origin**, because draw.io child
+   geometry is relative to the parent container (see `mxgraph-primer.md`):
+
+   ```text
+   child_relative_x = child_page_x - boundary_origin_x
+   child_relative_y = child_page_y - boundary_origin_y
+   ```
+
+Emit the boundary cell *before* its children so it renders behind them.
+
+**Worked two-column example.** Children at page coords Web(40,240), API(40,440),
+Postgres(40,640), Redis(280,640):
+
+- bounding box `40 … 280+160=440` by `240 … 640+80=720`
+- padded boundary origin `(16, 216)`, size `(440-40+48) × (720-240+48) = 448 × 528`
+- relative children: Web(24,24), API(24,224), Postgres(24,424), Redis(264,424).
 
 ### Worked coordinate example
 
