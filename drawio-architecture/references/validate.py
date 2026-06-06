@@ -64,11 +64,14 @@ def validate_drawio(path):
             if parent not in ids:
                 problems.append(f"cell {cid!r} has parent {parent!r} which does not exist")
         if c.get("vertex") == "1":
+            if cid is None:
+                problems.append("a vertex is missing its required id attribute")
             r = _rect(c)
             if r is not None:
                 if r[0] < 0 or r[1] < 0:
                     problems.append(f"vertex {cid!r} has negative coordinates {r[:2]}")
-                vertices[cid] = (c, r, parent)
+                if cid is not None:
+                    vertices[cid] = (c, r, parent)
         if c.get("edge") == "1":
             for end in ("source", "target"):
                 ref = c.get(end)

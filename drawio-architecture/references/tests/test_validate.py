@@ -29,6 +29,24 @@ class TestValidateDrawio(unittest.TestCase):
         os.unlink(path)
         self.assertTrue(any("well-formed" in p for p in problems), problems)
 
+    def test_vertex_without_id_is_reported(self):
+        import tempfile
+        xml = (
+            '<mxfile><diagram name="noid"><mxGraphModel><root>'
+            '<mxCell id="0"/><mxCell id="1" parent="0"/>'
+            '<mxCell value="A" vertex="1" parent="1">'
+            '<mxGeometry x="40" y="40" width="160" height="80" as="geometry"/></mxCell>'
+            '<mxCell value="B" vertex="1" parent="1">'
+            '<mxGeometry x="100" y="60" width="160" height="80" as="geometry"/></mxCell>'
+            '</root></mxGraphModel></diagram></mxfile>'
+        )
+        with tempfile.NamedTemporaryFile("w", suffix=".drawio", delete=False) as f:
+            f.write(xml)
+            path = f.name
+        problems = validate_drawio(path)
+        os.unlink(path)
+        self.assertTrue(any("missing its required id" in p for p in problems), problems)
+
 
 if __name__ == "__main__":
     unittest.main()
