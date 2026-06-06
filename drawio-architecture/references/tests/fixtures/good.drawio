@@ -1,0 +1,7 @@
+<mxfile><diagram name="good"><mxGraphModel><root>
+  <mxCell id="0"/>
+  <mxCell id="1" parent="0"/>
+  <mxCell id="a" value="A" style="rounded=1;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="160" height="80" as="geometry"/></mxCell>
+  <mxCell id="b" value="B" style="rounded=1;" vertex="1" parent="1"><mxGeometry x="40" y="240" width="160" height="80" as="geometry"/></mxCell>
+  <mxCell id="e1" value="calls" style="endArrow=open;" edge="1" parent="1" source="a" target="b"><mxGeometry relative="1" as="geometry"/></mxCell>
+</root></mxGraphModel></diagram></mxfile>
