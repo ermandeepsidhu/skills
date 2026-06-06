@@ -45,7 +45,7 @@ An edge is an `mxCell` with `edge="1"`. Its `source` and `target` reference the 
 A container is a vertex with `container=1` in its style. Place children inside it by setting their `parent` to the container's `id`. A child's `x`/`y` are then **relative to the container's origin**, not the page — `x="20" y="40"` below means 20px right and 40px down from the boundary's top-left corner.
 
 ```xml
-<mxCell id="bnd_aws" value="AWS" style="rounded=1;dashed=1;fillColor=none;verticalAlign=top;container=1;" vertex="1" parent="1">
+<mxCell id="bnd_aws" value="AWS" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=none;verticalAlign=top;container=1;" vertex="1" parent="1">
   <mxGeometry x="600" y="40" width="360" height="300" as="geometry"/>
 </mxCell>
 <mxCell id="lambda" value="Lambda" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="bnd_aws">
