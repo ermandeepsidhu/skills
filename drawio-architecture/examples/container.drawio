@@ -1,0 +1,18 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Container">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" page="1" pageWidth="1169" pageHeight="826">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="user" value="Customer&#10;[Person]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#08427B;strokeColor=#052E56;fontColor=#FFFFFF;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="bnd" value="Ordering System" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#444444;fontColor=#444444;verticalAlign=top;container=1;" vertex="1" parent="1"><mxGeometry x="16" y="216" width="408" height="528" as="geometry"/></mxCell>
+        <mxCell id="web" value="Web App&#10;[Container: React]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;" vertex="1" parent="bnd"><mxGeometry x="24" y="48" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="api" value="API&#10;[Container: Node.js]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;" vertex="1" parent="bnd"><mxGeometry x="24" y="248" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="db" value="Orders DB&#10;[Container: PostgreSQL]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#438DD5;strokeColor=#2E6295;fontColor=#FFFFFF;" vertex="1" parent="bnd"><mxGeometry x="24" y="424" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="e1" value="uses [HTTPS]" style="endArrow=open;html=1;rounded=0;fontSize=10;fontColor=#404040;strokeColor=#707070;" edge="1" parent="1" source="user" target="web"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="makes API calls to [JSON/HTTPS]" style="endArrow=open;html=1;rounded=0;fontSize=10;fontColor=#404040;strokeColor=#707070;" edge="1" parent="1" source="web" target="api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="reads from and writes to" style="endArrow=open;html=1;rounded=0;fontSize=10;fontColor=#404040;strokeColor=#707070;" edge="1" parent="1" source="api" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
