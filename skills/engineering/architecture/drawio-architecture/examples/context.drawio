@@ -1,0 +1,15 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="System Context">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" page="1" pageWidth="1169" pageHeight="826">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="user" value="Customer&#10;[Person]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#08427B;strokeColor=#052E56;fontColor=#FFFFFF;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="sys" value="Ordering System&#10;[Software System]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0B4884;fontColor=#FFFFFF;" vertex="1" parent="1"><mxGeometry x="40" y="240" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="pay" value="Payment Gateway&#10;[External System]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#6B6B6B;fontColor=#FFFFFF;" vertex="1" parent="1"><mxGeometry x="280" y="240" width="160" height="80" as="geometry"/></mxCell>
+        <mxCell id="e1" value="places orders using" style="endArrow=open;html=1;rounded=0;fontSize=10;fontColor=#404040;strokeColor=#707070;" edge="1" parent="1" source="user" target="sys"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="requests payment via" style="endArrow=open;html=1;rounded=0;fontSize=10;fontColor=#404040;strokeColor=#707070;" edge="1" parent="1" source="sys" target="pay"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
