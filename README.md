@@ -17,6 +17,7 @@ Skills are grouped by **domain / category** under [`skills/`](skills/).
 | Category | Skill | What it does | Examples |
 |---|---|---|---|
 | Architecture | [`drawio-architecture`](skills/engineering/architecture/drawio-architecture/) | Produce editable, C4-inspired solution-architecture diagrams as native `.drawio` (mxGraph) XML, with deterministic grid layout and built-in verification. | [showcase](skills/engineering/architecture/drawio-architecture/EXAMPLES.md) |
+| Security | [`responding-to-secret-leaks`](skills/engineering/security/responding-to-secret-leaks/) | Incident response for leaked API keys: prove the leak in the live bundle, triage by blast radius, revoke/rotate, move calls server-side, and harden with budgets + a post-build leak detector. | — |
 
 <p align="center">
   <img src="skills/engineering/architecture/drawio-architecture/examples/container.png" alt="Example C4 container diagram produced by drawio-architecture" width="280">
