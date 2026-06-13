@@ -7,9 +7,9 @@ imports this file; Cursor, Copilot, Codex, and others read `AGENTS.md` directly.
 
 A public library of high-quality, reusable **skills** for engineering teams. Each skill is a
 self-contained directory that teaches an agent how to perform one task well. Canonical skills
-live under `skills/<domain>/<category>/<skill>/`. The repo currently ships one skill,
-`skills/engineering/architecture/drawio-architecture/`, which is also the **template every
-future skill follows** — match its structure and rigor when adding a new one.
+live under `skills/<domain>/<category>/<skill>/`. Treat
+`skills/engineering/architecture/drawio-architecture/` as the **reference template** — match
+its structure and rigor when adding a new skill. See `README.md` for the full catalog.
 
 These skills are distributed across multiple AI coding tools via the open Agent Skills
 `SKILL.md` standard. The canonical copy lives once under `skills/`; per-tool directories
